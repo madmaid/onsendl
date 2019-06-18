@@ -1,0 +1,17 @@
+[package]
+name = "onsendl"
+version = "0.1.0"
+authors = ["madmaid <madmaid@users.noreply.github.com>"]
+edition = "2018"
+
+[dependencies]
+reqwest = "0.9.18"
+roxmltree = "0.6.0"
+failure = "0.1.5"
+serde_json = "1.0.39"
+serde = "1.0.92"
+serde_derive = "1.0.92"
+derive_builder = "0.7.2"
+tokio = "0.1.21"
+futures = "0.1.27"
+dirs = "2.0.1"
