@@ -9,8 +9,8 @@ import * as yargs from "yargs";
 
 const API = "https://www.onsen.ag/web_api/programs";
 const ffmpegCmd = (url: string, dst: string, video: boolean) => video
-    ? `ffmpeg -i ${url} -movflags faststart -c copy -bsf:a aac_adtstoasc "${dst}.mp4"`
-    : `ffmpeg -i ${url} -acodec copy -bsf:a aac_adtstoasc "${dst}.m4a"`
+    ? `ffmpeg -n -i ${url} -movflags faststart -c copy -bsf:a aac_adtstoasc "${dst}.mp4"`
+    : `ffmpeg -n -i ${url} -acodec copy -bsf:a aac_adtstoasc "${dst}.m4a"`
 
 const defaultConfigDir = path.join(process.env["HOME"] || "./", ".config/onsendl/config.json");
 const defaultRecordedDir = "/media/recorded/onsen/";
