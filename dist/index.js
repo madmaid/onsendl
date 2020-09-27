@@ -79,7 +79,12 @@ function download(content, programTitle, recordedDir) {
     var filename = programTitle + " " + content.title;
     var dst = path.join(recordedDir || defaultRecordedDir, filename);
     var video = content.movie;
-    child_process.execSync(ffmpegCmd(content.streaming_url, dst, video));
+    try {
+        // TODO: download as .m4a.part then rename with .m4a
+        child_process.execSync(ffmpegCmd(content.streaming_url, dst, video));
+    }
+    catch (err) {
+    }
 }
 function crawl(recordedDir, config, flags) {
     return __awaiter(this, void 0, void 0, function () {

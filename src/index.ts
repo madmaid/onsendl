@@ -24,7 +24,11 @@ function download(content: Content, programTitle: string, recordedDir?: string) 
     const dst = path.join(recordedDir || defaultRecordedDir, filename);
     const video = content.movie;
 
-    child_process.execSync(ffmpegCmd(content.streaming_url, dst, video));
+    try {
+        // TODO: download as .m4a.part then rename with .m4a
+        child_process.execSync(ffmpegCmd(content.streaming_url, dst, video));
+    } catch (err) {
+    }
 }
 
 async function crawl(recordedDir: string,  config: Config, flags: Flags) {
