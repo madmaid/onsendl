@@ -2,7 +2,7 @@
 Description=Download Onsen Audio Files
 [Service]
 Type=oneshot
-# ExecStart=%h/onsen/onsendl /media/recorded/onsen/
-ExecStart=%h/onsendl/onsendl 
+WorkingDirectory=%h/repo/onsendl/
+ExecStart=/usr/bin/npm start -- -o /media/recorded/onsen/
 [Install]
 WantedBy=default.target
