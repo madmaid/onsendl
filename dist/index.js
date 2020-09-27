@@ -67,8 +67,8 @@ var axios_1 = __importDefault(require("axios"));
 var yargs = __importStar(require("yargs"));
 var API = "https://www.onsen.ag/web_api/programs";
 var ffmpegCmd = function (url, dst, video) { return video
-    ? "ffmpeg -i " + url + " -movflags faststart -c copy -bsf:a aac_adtstoasc \"" + dst + ".mp4\""
-    : "ffmpeg -i " + url + " -acodec copy -bsf:a aac_adtstoasc \"" + dst + ".m4a\""; };
+    ? "ffmpeg -n -i " + url + " -movflags faststart -c copy -bsf:a aac_adtstoasc \"" + dst + ".mp4\""
+    : "ffmpeg -n -i " + url + " -acodec copy -bsf:a aac_adtstoasc \"" + dst + ".m4a\""; };
 var defaultConfigDir = path.join(process.env["HOME"] || "./", ".config/onsendl/config.json");
 var defaultRecordedDir = "/media/recorded/onsen/";
 function download(content, programTitle, recordedDir) {
